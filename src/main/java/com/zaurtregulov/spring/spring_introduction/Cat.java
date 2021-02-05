@@ -5,4 +5,8 @@ public class Cat implements Pet {
     public void say() {
         System.out.println("Мяу-мяу");
     }
+
+    public Cat() {
+        System.out.println("Cat bean is creating");
+    }
 }
