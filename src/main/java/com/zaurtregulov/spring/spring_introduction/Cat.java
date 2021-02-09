@@ -1,5 +1,8 @@
 package com.zaurtregulov.spring.spring_introduction;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Cat implements Pet {
     @Override
     public void say() {
@@ -9,4 +12,5 @@ public class Cat implements Pet {
     public Cat() {
         System.out.println("Cat bean is creating");
     }
+
 }

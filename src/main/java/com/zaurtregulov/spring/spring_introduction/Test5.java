@@ -2,18 +2,16 @@ package com.zaurtregulov.spring.spring_introduction;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class Test4 {
+public class Test5 {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext2.xml");
         Dog myDog = context.getBean("myPet",Dog.class);
-//        myDog.setName("Belka");
+        myDog.say();
+
         Dog yourDog = context.getBean("myPet",Dog.class);
-//        yourDog.setName("Strelka");
-        System.out.println(myDog.equals(yourDog));
-        System.out.println(myDog);
-        System.out.println(yourDog);
-//        System.out.println(myDog.getName());
-//        System.out.println(yourDog.getName());
+        yourDog.say();
+
+
         context.close();
     }
 }
