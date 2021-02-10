@@ -12,6 +12,7 @@
     <bean id="myPet"
           class="com.zaurtregulov.spring.spring_introduction.Dog">
     </bean>
+
     <bean id="myPerson"
           class="com.zaurtregulov.spring.spring_introduction.Person">
         <!-- внедрение зависимости с помощью конструктора -->
