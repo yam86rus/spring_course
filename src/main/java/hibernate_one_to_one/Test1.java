@@ -1,12 +1,12 @@
-package hibernate_test_2;
+package hibernate_one_to_one;
 
-import hibernate_test_2.entity.Detail;
-import hibernate_test_2.entity.Employee;
+import hibernate_one_to_one.entity.Detail;
+import hibernate_one_to_one.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class Test2 {
+public class Test1 {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
@@ -16,34 +16,31 @@ public class Test2 {
 
         Session session = null;
         try {
-//            session = factory.getCurrentSession(); // получаем сессию
-//            Employee employee = new Employee("Nikolay", "Ivanov", "HR", 850);
-//            Detail detail = new Detail("New Your", "123", "nik@gmail.com");
-//
+//            Session session = factory.getCurrentSession(); // получаем сессию
+//            Employee employee = new Employee("Oleg","Smirnov","IT",700);
+//            Detail detail = new Detail("Moscow","5454","oleg@gmail.com");
 //            employee.setEmpDetail(detail);
-//            detail.setEmployee(employee);
+//
 //            session.beginTransaction(); // начинаем транзакцию
-//            session.save(detail);
+//            session.save(employee);
+//
+//
 //            session.getTransaction().commit(); // комитит транзакцию
 //            System.out.println("Done");
 
+
 //            session = factory.getCurrentSession(); // получаем сессию
-//
 //            session.beginTransaction(); // начинаем транзакцию
-//            Detail detail = session.get(Detail.class,4);
-//            System.out.println(detail.getEmployee());
-//
+//            Employee emp = session.get(Employee.class, 10);
+//            System.out.println(emp.getEmpDetail());
 //
 //            session.getTransaction().commit(); // комитит транзакцию
 //            System.out.println("Done");
 
             session = factory.getCurrentSession(); // получаем сессию
-
             session.beginTransaction(); // начинаем транзакцию
-            Detail detail = session.get(Detail.class,1);
-            detail.getEmployee().setEmpDetail(null);
-            session.delete(detail);
-
+            Employee emp = session.get(Employee.class, 2);
+            session.delete(emp);
 
             session.getTransaction().commit(); // комитит транзакцию
             System.out.println("Done");
